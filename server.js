@@ -13,6 +13,7 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
+// *** BEGIN MY CODE ***
 // take uploaded file (name: upfile) and respond with name, type, and size (bytes)
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
   res.json(
@@ -23,6 +24,7 @@ app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
     }
   );
 });
+// *** END MY CODE ***
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
